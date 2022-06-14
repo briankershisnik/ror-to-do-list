@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+List.delete_all
+
+@counter = 0
+
+10.times do
+  List.create(
+    title: "#{Faker::Hipster.word}#{@counter}",
+    desc: Faker::Hipster.sentence
+  )
+
+  @counter += 1
+end
+
+# bundle exec rails db:seed
